@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.xeno_hero.xeno_background_image
+    - field.field.paragraph.xeno_hero.xeno_content
+    - field.field.paragraph.xeno_hero.xeno_invert
+    - field.field.paragraph.xeno_hero.xeno_overlay
+    - field.field.paragraph.xeno_hero.xeno_parallax
+    - paragraphs.paragraphs_type.xeno_hero
+  module:
+    - entity_reference_revisions
+    - image
+    - options
+id: paragraph.xeno_hero.default
+targetEntityType: paragraph
+bundle: xeno_hero
+mode: default
+content:
+  xeno_background_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  xeno_content:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  xeno_invert:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+  xeno_overlay:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+  xeno_parallax:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+hidden: {  }

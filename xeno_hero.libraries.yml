@@ -1,0 +1,10 @@
+xeno-hero:
+  css:
+    component:
+      css/xeno-hero.css:
+        minified: false
+  js:
+    js/xeno-hero.js:
+      minified: false
+  dependencies:
+    - core/jquery

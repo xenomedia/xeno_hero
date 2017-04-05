@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.xeno_hero.xeno_background_image
+    - field.field.paragraph.xeno_hero.xeno_content
+    - field.field.paragraph.xeno_hero.xeno_invert
+    - field.field.paragraph.xeno_hero.xeno_overlay
+    - field.field.paragraph.xeno_hero.xeno_parallax
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.xeno_hero
+  module:
+    - image
+    - paragraphs
+id: paragraph.xeno_hero.default
+targetEntityType: paragraph
+bundle: xeno_hero
+mode: default
+content:
+  xeno_background_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  xeno_content:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  xeno_invert:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  xeno_overlay:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  xeno_parallax:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+hidden:
+  created: true
+  status: true
+  uid: true

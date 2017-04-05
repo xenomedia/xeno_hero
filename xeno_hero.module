@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file
+ * Xeno Hero module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function xeno_hero_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__xeno_hero' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}

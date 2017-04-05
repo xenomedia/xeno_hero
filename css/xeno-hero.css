@@ -1,0 +1,130 @@
+/* Paragraph specific. */
+.paragraph--type--xeno-hero {
+  padding: 5em 0;
+  position: relative;
+}
+
+.paragraph--type--xeno-hero > .paragraph {
+  z-index: 2;
+}
+
+.paragraph--type--xeno-hero:not(.invert) h1,
+.paragraph--type--xeno-hero:not(.invert) h2,
+.paragraph--type--xeno-hero:not(.invert) h3,
+.paragraph--type--xeno-hero:not(.invert) h4,
+.paragraph--type--xeno-hero:not(.invert) h5,
+.paragraph--type--xeno-hero:not(.invert) h6,
+.paragraph--type--xeno-hero:not(.invert) p,
+.paragraph--type--xeno-hero:not(.invert) ul,
+.paragraph--type--xeno-hero:not(.invert) blockquote {
+  color: #fff;
+}
+
+/* Background Image. */
+.background-image-holder {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: #252525;
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 50% 50% !important;
+  background-repeat: repeat;
+  background-size: cover !important;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s linear 0s;
+  will-change: transform, top;
+  z-index: 0;
+}
+
+.background-image-holder:not([class*="col-"]) {
+  width: 100%;
+}
+
+.invert .background-image-holder {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+
+.background-image-holder img {
+  display: none;
+}
+
+/* Overlay. */
+[data-overlay] {
+  position: relative;
+}
+
+[data-overlay]::before {
+  background: #252525 none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+[data-overlay] *:not(.paragraph):not(.background-image-holder) {
+  z-index: 2;
+}
+
+.invert[data-overlay]::before {
+  background: #fff none repeat scroll 0 0;
+}
+
+[data-overlay="1"]::before {
+  opacity: 0.1;
+}
+
+[data-overlay="2"]::before {
+  opacity: 0.2;
+}
+
+[data-overlay="3"]::before {
+  opacity: 0.3;
+}
+
+[data-overlay="4"]::before {
+  opacity: 0.4;
+}
+
+[data-overlay="5"]::before {
+  opacity: 0.5;
+}
+
+[data-overlay="6"]::before {
+  opacity: 0.6;
+}
+
+[data-overlay="7"]::before {
+  opacity: 0.7;
+}
+
+[data-overlay="8"]::before {
+  opacity: 0.8;
+}
+
+[data-overlay="9"]::before {
+  opacity: 0.9;
+}
+
+[data-overlay="10"]::before {
+  opacity: 1;
+}
+
+[data-overlay="0"]::before {
+  opacity: 0;
+}
+
+/* Parallax. */
+.parallax {
+  overflow: hidden;
+}
+
+.parallax .background-image-holder {
+  transition: none 0s ease 0s !important;
+}

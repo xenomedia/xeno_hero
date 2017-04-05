@@ -1,0 +1,7 @@
+name: Xeno Hero Paragraph Bundle
+type: module
+description: A reusable Hero Paragraph bundle with parallax and an overlay.
+core: 8.x
+package: Paragraphs
+dependencies:
+  - paragraphs

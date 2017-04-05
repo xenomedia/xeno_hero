@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.xeno_invert
+    - paragraphs.paragraphs_type.xeno_hero
+  module:
+    - options
+id: paragraph.xeno_hero.xeno_invert
+field_name: xeno_invert
+entity_type: paragraph
+bundle: xeno_hero
+label: Invert
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
