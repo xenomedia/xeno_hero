@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.xeno_zoom
+    - paragraphs.paragraphs_type.xeno_hero
+  module:
+    - options
+id: paragraph.xeno_hero.xeno_zoom
+field_name: xeno_zoom
+entity_type: paragraph
+bundle: xeno_hero
+label: Zoom
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
