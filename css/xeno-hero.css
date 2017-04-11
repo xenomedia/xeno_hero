@@ -1,4 +1,7 @@
 /* Paragraph specific. */
+.paragraph {
+  clear: both;
+}
 .paragraph--type--xeno-hero {
   padding: 5em 0;
   position: relative;
@@ -126,4 +129,75 @@
 
 .paragraph--type--xeno-hero .paragraph--type--xeno-hero__image {
   transition: none 0s ease 0s !important;
+}
+
+.zoom .paragraph--type--xeno-hero__image {
+  overflow: hidden;
+  width: 100%;
+  -webkit-animation: ken-burns 15s ease alternate infinite;
+  -moz-animation: ken-burns 15s ease alternate infinite;
+  -o-animation: ken-burns 15s ease alternate infinite;
+  animation: ken-burns 15s ease alternate infinite;
+  translate3d(0, 0, 0);
+}
+
+.zoom-1 .paragraph--type--xeno-hero__image {
+  animation-duration: 10s;
+}
+.zoom-2 .paragraph--type--xeno-hero__image {
+  animation-duration: 20s;
+}
+.zoom-3 .paragraph--type--xeno-hero__image {
+  animation-duration: 30s;
+}
+.zoom-4 .paragraph--type--xeno-hero__image {
+  animation-duration: 40s;
+}
+.zoom-5 .paragraph--type--xeno-hero__image {
+  animation-duration: 50s;
+}
+.zoom-6 .paragraph--type--xeno-hero__image {
+  animation-duration: 60s;
+}
+
+
+@-webkit-keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@-moz-keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }   
+}
+@-ms-keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }    
+}
+@-o-keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }  
+}
+@keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
