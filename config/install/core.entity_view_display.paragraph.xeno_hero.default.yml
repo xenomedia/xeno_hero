@@ -51,4 +51,10 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_key
+  xeno_zoom:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
 hidden: {  }

@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.xeno_zoom
+field_name: xeno_zoom
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: 'No Zoom'
+    -
+      value: '6'
+      label: 'Slowest'
+    -
+      value: '5'
+      label: 'Slower'
+    -
+      value: '4'
+      label: 'Slow'
+    -
+      value: '3'
+      label: 'Fast'
+    -
+      value: '2'
+      label: 'Faster'
+    -
+      value: '1'
+      label: 'Fastest'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
