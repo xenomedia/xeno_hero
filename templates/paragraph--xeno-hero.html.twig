@@ -105,6 +105,29 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   %}
 {% endif %}
 
+{# Renders Zoom field. #}
+{# Sets class from values in database. #}
+{% if content.xeno_zoom|render %}
+  {% set zoom_level = content.xeno_zoom['#items'].getString() %}
+  {% set zoom_levels = [
+    '0' == zoom_level ? '',
+    '1' == zoom_level ? 'zoom zoom-1',
+    '2' == zoom_level ? 'zoom zoom-2',
+    '3' == zoom_level ? 'zoom zoom-3',
+    '4' == zoom_level ? 'zoom zoom-4',
+    '5' == zoom_level ? 'zoom zoom-5',
+    '6' == zoom_level ? 'zoom zoom-6',
+    ]
+  %}
+ {% endif %}
+
+
+{# Merges Zoom field with classes. #}
+{% set zoom_field = content.xeno_zoom|render %}
+{% if zoom_field %}
+  {% set classes = classes|merge(zoom_levels) %}
+{% endif %}
+
 {# Merges Invert field with classes. #}
 {% set invert_field = content.xeno_invert|render %}
 {% if invert_field %}
