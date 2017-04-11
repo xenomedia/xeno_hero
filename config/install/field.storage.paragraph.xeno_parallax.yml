@@ -11,8 +11,26 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: parallax
-      label: 'Use Parallax'
+      value: '0'
+      label: 'No Parallax'
+    -
+      value: '6'
+      label: 'Slowest'
+    -
+      value: '5'
+      label: 'Slower'
+    -
+      value: '4'
+      label: 'Slow'
+    -
+      value: '3'
+      label: 'Fast'
+    -
+      value: '2'
+      label: 'Faster'
+    -
+      value: '1'
+      label: 'Fastest'
   allowed_values_function: ''
 module: options
 locked: false
