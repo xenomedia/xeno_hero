@@ -4,8 +4,8 @@ dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.xeno_parallax
-field_name: xeno_parallax
+id: paragraph.xeno_zoom
+field_name: xeno_zoom
 entity_type: paragraph
 type: list_string
 settings:

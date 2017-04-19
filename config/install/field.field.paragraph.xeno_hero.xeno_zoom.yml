@@ -2,15 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.xeno_parallax
+    - field.storage.paragraph.xeno_zoom
     - paragraphs.paragraphs_type.xeno_hero
   module:
     - options
-id: paragraph.xeno_hero.xeno_parallax
-field_name: xeno_parallax
+id: paragraph.xeno_hero.xeno_zoom
+field_name: xeno_zoom
 entity_type: paragraph
 bundle: xeno_hero
-label: Parallax
+label: Zoom
 description: ''
 required: false
 translatable: false

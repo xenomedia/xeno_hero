@@ -1,7 +1,17 @@
 /* Paragraph specific. */
+.paragraph {
+  clear: both;
+}
+
 .paragraph--type--xeno-hero {
-  padding: 5em 0;
   position: relative;
+  padding-top: 180px;
+  padding-bottom: 140px;
+}
+
+.paragraph--type--xeno-hero ~ .paragraph--type--xeno-hero,
+.item .paragraph--type--xeno-hero {
+  padding: 90px 0;
 }
 
 .paragraph--type--xeno-hero > .paragraph {
@@ -21,34 +31,29 @@
 }
 
 /* Background Image. */
-.background-image-holder {
+.paragraph--type--xeno-hero__image {
   background-attachment: scroll;
   background-clip: border-box;
   background-color: #252525;
   background-image: none;
   background-origin: padding-box;
-  background-position: 50% 50% !important;
-  background-repeat: repeat;
-  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-size: 100%;
   height: 100%;
   left: 0;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
-  top: 0;
+  top: 0 !important;
   transition: all 0.3s linear 0s;
   will-change: transform, top;
   z-index: 0;
 }
 
-.background-image-holder:not([class*="col-"]) {
+.paragraph--type--xeno-hero__image:not([class*="col-"]) {
   width: 100%;
 }
 
-.invert .background-image-holder {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-}
-
-.background-image-holder img {
+.paragraph--type--xeno-hero__image img {
   display: none;
 }
 
@@ -68,7 +73,7 @@
   z-index: 1;
 }
 
-[data-overlay] *:not(.paragraph):not(.background-image-holder) {
+[data-overlay] *:not(.paragraph):not(.paragraph--type--xeno-hero__image) {
   z-index: 2;
 }
 
@@ -121,10 +126,89 @@
 }
 
 /* Parallax. */
-.parallax {
+.paragraph--type--xeno-hero {
   overflow: hidden;
 }
 
-.parallax .background-image-holder {
+.paragraph--type--xeno-hero .paragraph--type--xeno-hero__image {
   transition: none 0s ease 0s !important;
+}
+
+.paragraph--zoom .paragraph--type--xeno-hero__image {
+  overflow: hidden;
+  width: 100%;
+  -webkit-animation: ken-burns 15s ease alternate infinite;
+  -moz-animation: ken-burns 15s ease alternate infinite;
+  -o-animation: ken-burns 15s ease alternate infinite;
+  animation: ken-burns 15s ease alternate infinite;
+  translate3d(0, 0, 0);
+}
+
+.paragraph--zoom--1 .paragraph--type--xeno-hero__image {
+  animation-duration: 10s;
+}
+
+.paragraph--zoom--2 .paragraph--type--xeno-hero__image {
+  animation-duration: 20s;
+}
+
+.paragraph--zoom--3 .paragraph--type--xeno-hero__image {
+  animation-duration: 30s;
+}
+
+.paragraph--zoom--4 .paragraph--type--xeno-hero__image {
+  animation-duration: 40s;
+}
+
+.paragraph--zoom--5 .paragraph--type--xeno-hero__image {
+  animation-duration: 50s;
+}
+
+.paragraph--zoom--6 .paragraph--type--xeno-hero__image {
+  animation-duration: 60s;
+}
+
+@-webkit-keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@-moz-keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@-ms-keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@-o-keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }

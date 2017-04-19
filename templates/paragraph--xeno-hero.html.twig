@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display the Xeno Hero Paragraphs bundles..
+ * Default theme implementation to display the Xeno Hero Paragraphs bundle.
  *
  * Available variables:
  * - paragraph: Full paragraph entity.
@@ -76,19 +76,23 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Renders Parallax field. #}
-{# Sets class from values in database. #}
+{# Sets data attibute value from values in database. #}
 {% if content.xeno_parallax|render %}
-  {% set parallax_level = content.xeno_parallax['#items'].getString() %}
-  {% set parallax_levels = [
-    'parallax' == parallax_level ? 'parallax',
+  {% set parallax_speed = content.xeno_parallax['#items'].getString() %}
+  {% set parallax_speeds = [
+    '0' == parallax_speed ? '0',
+    '1' == parallax_speed ? '1',
+    '2' == parallax_speed ? '2',
+    '3' == parallax_speed ? '3',
+    '4' == parallax_speed ? '4',
+    '5' == parallax_speed ? '5',
+    '6' == parallax_speed ? '6',
+    '7' == parallax_speed ? '7',
+    '8' == parallax_speed ? '8',
+    '9' == parallax_speed ? '9',
+    '10' == parallax_speed ? '10',
   ]
   %}
-{% endif %}
-
-{# Merges Parallax field with classes. #}
-{% set parallax_field = content.xeno_parallax|render %}
-{% if parallax_field %}
-  {% set classes = classes|merge(parallax_levels) %}
 {% endif %}
 
 {# Renders Invert field. #}
@@ -107,10 +111,34 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(invert_levels) %}
 {% endif %}
 
-{# Prints div with classes, and content without Width and Background. #}
-<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels) }}>
-  <div class="background-image-holder">
-    {{ content.xeno_background_image }}
-  </div>
+{# Renders Zoom field. #}
+{# Sets class from values in database. #}
+{% if content.xeno_zoom|render %}
+  {% set zoom_level = content.xeno_zoom['#items'].getString() %}
+  {% set zoom_levels = [
+    '0' == zoom_level ? '',
+    '1' == zoom_level ? 'paragraph--zoom paragraph--zoom--1',
+    '2' == zoom_level ? 'paragraph--zoom paragraph--zoom--2',
+    '3' == zoom_level ? 'paragraph--zoom paragraph--zoom--3',
+    '4' == zoom_level ? 'paragraph--zoom paragraph--zoom--4',
+    '5' == zoom_level ? 'paragraph--zoom paragraph--zoom--5',
+    '6' == zoom_level ? 'paragraph--zoom paragraph--zoom--6',
+    ]
+  %}
+ {% endif %}
+
+{# Merges Zoom field with classes. #}
+{% set zoom_field = content.xeno_zoom|render %}
+{% if zoom_field %}
+  {% set classes = classes|merge(zoom_levels) %}
+{% endif %}
+
+{# Prints div with classes, & content w/o img/invert/overlay/parallax fields. #}
+<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds) }}>
+  {% if content.xeno_background_image|render %}
+    <div class="paragraph--type--xeno-hero__image">
+      {{ content.xeno_background_image }}
+    </div>
+  {% endif %}
   {{ content|without('xeno_background_image', 'xeno_invert', 'xeno_overlay', 'xeno_parallax') }}
 </div>
