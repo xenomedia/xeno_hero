@@ -1,0 +1,14 @@
+{
+  "name": "drupal/xeno_hero",
+  "type": "drupal-custom-module",
+  "description": "Drupal 8 module that creates a Hero Paragraphs bundle.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://github.com/xenomedia/xeno_hero",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://github.com/xenomedia/xeno_hero/issues",
+    "source": "https://github.com/xenomedia/xeno_hero"
+  },
+  "require": { }
+}
