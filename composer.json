@@ -1,5 +1,5 @@
 {
-  "name": "drupal/xeno_hero",
+  "name": "xenomedia/xeno_hero",
   "type": "drupal-custom-module",
   "description": "Drupal 8 module that creates a Hero Paragraphs bundle.",
   "keywords": ["Drupal"],
