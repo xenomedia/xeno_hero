@@ -5,7 +5,6 @@
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
   "homepage": "https://github.com/xenomedia/xeno_hero",
-  "minimum-stability": "dev",
   "support": {
     "issues": "https://github.com/xenomedia/xeno_hero/issues",
     "source": "https://github.com/xenomedia/xeno_hero"
