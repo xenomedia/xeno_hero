@@ -1,18 +1,20 @@
-jQuery(document).ready(function($){
+(function ($, Drupal) {
 
-  // makes the parallax elements
+  "use strict";
+
+  // Makes the parallax function.
   function parallaxIt() {
 
-    // create variables
+    // Create variables.
     var $fwindow = $(window);
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // on window scroll event
+    // Adds on window scroll event.
     $fwindow.on('scroll resize', function() {
       scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     });
 
-    // for each of background parallax element
+    // For each of background parallax elements.
     $('.paragraph--type--xeno-hero .paragraph--type--xeno-hero__image').each(function(){
       var $backgroundObj = $(this);
       var yPos;
@@ -34,10 +36,10 @@ jQuery(document).ready(function($){
       });
     });
 
-    // triggers winodw scroll for refresh
+    // Triggers the window scroll for refresh.
     $fwindow.trigger('scroll');
   };
 
   parallaxIt();
 
-});
+})(jQuery, Drupal);
