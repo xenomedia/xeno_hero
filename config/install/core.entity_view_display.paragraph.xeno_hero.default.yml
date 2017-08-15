@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.xeno_hero.xeno_offset
     - field.field.paragraph.xeno_hero.xeno_background_image
     - field.field.paragraph.xeno_hero.xeno_content
     - field.field.paragraph.xeno_hero.xeno_invert
@@ -17,6 +18,14 @@ targetEntityType: paragraph
 bundle: xeno_hero
 mode: default
 content:
+  xeno_offset:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   xeno_background_image:
     weight: 0
     label: hidden

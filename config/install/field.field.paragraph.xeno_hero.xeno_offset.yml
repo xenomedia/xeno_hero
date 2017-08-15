@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.xeno_offset
+    - paragraphs.paragraphs_type.xeno_hero
+id: paragraph.xeno_hero.field_offset
+field_name: xeno_offset
+entity_type: paragraph
+bundle: xeno_hero
+label: Offset
+description: 'Enter a positive number to modify the position of the background image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
