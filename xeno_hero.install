@@ -28,6 +28,6 @@ function xeno_hero_update_8001() {
   }
 
   // Send message to updater.
-  $message = t('Offset field added to the hero bundle. It allows you to modify the position of the background image. Navigate to the Manager form display and Manage display for Hero to enable the offset field.');
+  $message = t('Offset field added to the hero bundle. It allows you to modify the position of the background image. Navigate to the Manage form display and Manage display for Hero to enable the offset field.');
   return $message;
 }
