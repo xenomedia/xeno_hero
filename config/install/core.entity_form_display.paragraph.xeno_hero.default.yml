@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.xeno_hero.xeno_background_image
+    - field.field.paragraph.xeno_hero.xeno_background_video
     - field.field.paragraph.xeno_hero.xeno_content
     - field.field.paragraph.xeno_hero.xeno_invert
     - field.field.paragraph.xeno_hero.xeno_overlay
@@ -13,6 +14,7 @@ dependencies:
   module:
     - image
     - paragraphs
+    - video_embed_field
 id: paragraph.xeno_hero.default
 targetEntityType: paragraph
 bundle: xeno_hero
@@ -25,37 +27,48 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
+  xeno_background_video:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: video_embed_field_textfield
+    region: content
   xeno_content:
     type: entity_reference_paragraphs
-    weight: 1
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
   xeno_invert:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-  xeno_overlay:
-    weight: 3
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-  xeno_parallax:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-  xeno_zoom:
     weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  xeno_overlay:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  xeno_parallax:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  xeno_zoom:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
 hidden:
   created: true
   status: true
