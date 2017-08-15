@@ -10,19 +10,6 @@ use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 
 /**
- * Overrides configuration.
- *
- * @param string $config_name
- *   Configuration name.
- * @param string $path
- *   Base path.
- */
-function xeno_hero_override_config($config_name, $path) {
-  $active_storage = \Drupal::service('config.storage');
-  $active_storage->write($config_name, Yaml::parse(file_get_contents($path . '/config/install/' . $config_name . '.yml')));
-}
-
-/**
  * Adds offset field to Hero paragraph.
  */
 function xeno_hero_update_8001() {
@@ -40,12 +27,7 @@ function xeno_hero_update_8001() {
     FieldConfig::create($field_yml)->save();
   }
 
-  // Create Paragraphs bundle form.
-  xeno_hero_override_config('core.entity_form_display.paragraph.xeno_hero.default', $path);
-  // Create Paragraphs bundle view.
-  xeno_hero_override_config('core.entity_view_display.paragraph.xeno_hero.default', $path);
-
   // Send message to updater.
-  $message = t('Offset field added to the hero bundle. It allows you to modify the position of the background image.');
+  $message = t('Offset field added to the hero bundle. It allows you to modify the position of the background image. Navigate to the Manager form display and Manage display for Hero to enable the offset field.');
   return $message;
 }
