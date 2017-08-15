@@ -127,10 +127,11 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Prints div with classes, & content w/o img/invert/overlay/parallax fields. #}
 <div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds) }}>
-  {% if content.xeno_background_image|render %}
-    <div class="paragraph--type--xeno-hero__image">
+  {% if content.xeno_background_image|render or content.field_background_video|render %}
+    <div class="paragraph--type--xeno-hero__background">
       {{ content.xeno_background_image }}
+      {{ content.field_background_video }}
     </div>
   {% endif %}
-  {{ content|without('xeno_background_image', 'xeno_invert', 'xeno_overlay', 'xeno_parallax') }}
+  {{ content|without('field_background_video', 'xeno_background_image', 'xeno_invert', 'xeno_overlay', 'xeno_parallax') }}
 </div>

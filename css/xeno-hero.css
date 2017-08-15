@@ -31,7 +31,7 @@
 }
 
 /* Background Image. */
-.paragraph--type--xeno-hero__image {
+.paragraph--type--xeno-hero__background {
   background-attachment: scroll;
   background-clip: border-box;
   background-color: #252525;
@@ -49,11 +49,11 @@
   z-index: 0;
 }
 
-.paragraph--type--xeno-hero__image:not([class*="col-"]) {
+.paragraph--type--xeno-hero__background:not([class*="col-"]) {
   width: 100%;
 }
 
-.paragraph--type--xeno-hero__image img {
+.paragraph--type--xeno-hero__background img {
   display: none;
 }
 
@@ -73,7 +73,7 @@
   z-index: 1;
 }
 
-[data-overlay] *:not(.paragraph):not(.paragraph--type--xeno-hero__image) {
+[data-overlay] *:not(.paragraph):not(.paragraph--type--xeno-hero__background) {
   z-index: 2;
 }
 
@@ -122,42 +122,42 @@
   overflow: hidden;
 }
 
-.paragraph--type--xeno-hero .paragraph--type--xeno-hero__image {
+.paragraph--type--xeno-hero .paragraph--type--xeno-hero__background {
   transition: none 0s ease 0s !important;
 }
 
 /* Zoom. */
-.paragraph--zoom .paragraph--type--xeno-hero__image {
+.paragraph--zoom .paragraph--type--xeno-hero__background {
   overflow: hidden;
   width: 100%;
   -webkit-animation: ken-burns 15s ease alternate infinite;
   -moz-animation: ken-burns 15s ease alternate infinite;
   -o-animation: ken-burns 15s ease alternate infinite;
   animation: ken-burns 15s ease alternate infinite;
-  -webkit-transform: translate3d(0, 0, 0);
+  translate3d(0, 0, 0);
 }
 
-.paragraph--zoom--1 .paragraph--type--xeno-hero__image {
+.paragraph--zoom--1 .paragraph--type--xeno-hero__background {
   animation-duration: 10s;
 }
 
-.paragraph--zoom--2 .paragraph--type--xeno-hero__image {
+.paragraph--zoom--2 .paragraph--type--xeno-hero__background {
   animation-duration: 20s;
 }
 
-.paragraph--zoom--3 .paragraph--type--xeno-hero__image {
+.paragraph--zoom--3 .paragraph--type--xeno-hero__background {
   animation-duration: 30s;
 }
 
-.paragraph--zoom--4 .paragraph--type--xeno-hero__image {
+.paragraph--zoom--4 .paragraph--type--xeno-hero__background {
   animation-duration: 40s;
 }
 
-.paragraph--zoom--5 .paragraph--type--xeno-hero__image {
+.paragraph--zoom--5 .paragraph--type--xeno-hero__background {
   animation-duration: 50s;
 }
 
-.paragraph--zoom--6 .paragraph--type--xeno-hero__image {
+.paragraph--zoom--6 .paragraph--type--xeno-hero__background {
   animation-duration: 60s;
 }
 
