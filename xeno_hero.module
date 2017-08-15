@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Xeno Hero module file.
@@ -14,4 +13,38 @@ function xeno_hero_theme($existing, $type, $theme, $path) {
       'base hook' => 'paragraph',
     ],
   ];
+}
+
+/**
+ * Implements hook_preprocess_video_embed_iframe().
+ * Function comes from https://www.drupal.org/node/2688349.
+ * Find a full list of YouTube player parameters at:
+ * https://developers.google.com/youtube/player_parameters
+ */
+function xeno_hero_preprocess_video_embed_iframe__youtube(&$variables) {
+  // Automatically play video.
+  $variables['query']['autoplay'] = '1';
+  // Display controls.
+  $variables['query']['controls'] = '0';
+  // Loop the video. Does not work.
+  $variables['query']['loop'] = '1';
+  // Display the title.
+  $variables['query']['showinfo'] = '0';
+}
+
+/**
+ * Implements hook_preprocess_video_embed_iframe().
+ * For Vimeo.
+ */
+function xeno_hero_preprocess_video_embed_iframe__vimeo(&$variables) {
+  // Automatically play video.
+  $variables['query']['autoplay'] = 'true';
+  // Display the byline.
+  $variables['query']['byline'] = 'false';
+  // Loop the video. Does not work.
+  $variables['query']['loop'] = 'true';
+  // Display the user's portrait.
+  $variables['query']['portrait'] = 'false';
+  // Display the title.
+  $variables['query']['title'] = 'false';
 }
