@@ -26,9 +26,16 @@
       $fwindow.on('scroll resize', function() {
         var docViewTop = $(window).scrollTop();
         var docViewBottom = docViewTop + $(window).height();
+        var offset = $backgroundObj.parent().attr('data-offset');
+        if (offset === undefined) {
+          offset = 0;
+        }
+        else {
+          offset = parseInt(offset);
+        }
 
         if ($backgroundObj.offset().top < docViewBottom) {
-          yPos = + ((docViewBottom - $backgroundObj.offset().top - $backgroundObj.height()*1.25) / speed);
+          yPos = -((docViewTop / speed) + offset);
           coords = '50% '+ yPos + 'px';
 
           $backgroundObj.css({ backgroundPosition: coords });
