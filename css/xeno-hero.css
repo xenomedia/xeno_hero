@@ -134,7 +134,7 @@
   -moz-animation: ken-burns 15s ease alternate infinite;
   -o-animation: ken-burns 15s ease alternate infinite;
   animation: ken-burns 15s ease alternate infinite;
-  translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .paragraph--zoom--1 .paragraph--type--xeno-hero__background {
