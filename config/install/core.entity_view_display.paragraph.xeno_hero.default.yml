@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.xeno_hero.xeno_offset
     - field.field.paragraph.xeno_hero.xeno_background_image
     - field.field.paragraph.xeno_hero.xeno_content
     - field.field.paragraph.xeno_hero.xeno_invert
+    - field.field.paragraph.xeno_hero.xeno_offset
     - field.field.paragraph.xeno_hero.xeno_overlay
     - field.field.paragraph.xeno_hero.xeno_parallax
     - paragraphs.paragraphs_type.xeno_hero
