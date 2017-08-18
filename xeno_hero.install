@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Install / Update functions for Xeno Hero.
+ */
+
+use Symfony\Component\Yaml\Yaml;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
+
+/**
+ * Adds offset field to Hero paragraph.
+ */
+function xeno_hero_update_8001() {
+  // Sets variable for the path.
+  $path = drupal_get_path('module', 'xeno_hero');
+
+  // Create field storage.
+  $field_storage_yml = Yaml::parse(file_get_contents($path . '/config/install/field.storage.paragraph.xeno_offset.yml'));
+  if (!FieldStorageConfig::loadByName($field_storage_yml['entity_type'], $field_storage_yml['field_name'])) {
+    FieldStorageConfig::create($field_storage_yml)->save();
+  }
+  // Create field instance.
+  $field_yml = Yaml::parse(file_get_contents($path . '/config/install/field.field.paragraph.xeno_hero.xeno_offset.yml'));
+  if (!FieldConfig::loadByName($field_yml['entity_type'], $field_yml['bundle'], $field_yml['field_name'])) {
+    FieldConfig::create($field_yml)->save();
+  }
+
+  // Send message to updater.
+  $message = t('Offset field added to the hero bundle. It allows you to modify the position of the background image. Navigate to the Manage form display and Manage display for Hero to enable the offset field.');
+  return $message;
+}
