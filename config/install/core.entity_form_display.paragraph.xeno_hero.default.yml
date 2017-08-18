@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.xeno_hero.xeno_background_video
     - field.field.paragraph.xeno_hero.xeno_content
     - field.field.paragraph.xeno_hero.xeno_invert
+    - field.field.paragraph.xeno_hero.xeno_offset
     - field.field.paragraph.xeno_hero.xeno_overlay
     - field.field.paragraph.xeno_hero.xeno_parallax
     - field.field.paragraph.xeno_hero.xeno_zoom
@@ -50,6 +51,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  xeno_offset:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   xeno_overlay:
     weight: 4

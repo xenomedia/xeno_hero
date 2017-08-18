@@ -88,6 +88,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   %}
 {% endif %}
 
+{# Renders Parallax Offset field. #}
+{# Sets data attibute value from user input. #}
+{% if content.xeno_offset|render %}
+  {% set parallax_offset = content.xeno_offset['#items'].getString() %}
+{% endif %}
+
 {# Renders Invert field. #}
 {# Sets class from values in database. #}
 {% if content.xeno_invert|render %}
@@ -126,12 +132,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Prints div with classes, & content w/o img/invert/overlay/parallax fields. #}
-<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds) }}>
+<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds).setAttribute('data-offset', parallax_offset) }}>
   {% if content.xeno_background_image|render or content.field_background_video|render %}
     <div class="paragraph--type--xeno-hero__background">
       {{ content.xeno_background_image }}
-      {{ content.field_background_video }}
+      {{ content.xeno_background_video }}
     </div>
   {% endif %}
-  {{ content|without('field_background_video', 'xeno_background_image', 'xeno_invert', 'xeno_overlay', 'xeno_parallax') }}
+  {{ content|without('xeno_background_image', 'xeno_background_video', 'xeno_invert', 'xeno_offset', 'xeno_overlay', 'xeno_parallax') }}
 </div>
