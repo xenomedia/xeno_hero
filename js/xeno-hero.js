@@ -17,6 +17,7 @@
     // For each of background parallax elements.
     $('.paragraph--type--xeno-hero .paragraph--type--xeno-hero__image').each(function(){
       var $backgroundObj = $(this);
+      var $targetBackgroundObj = $(this).parent().attr('id');
       var yPos;
       var coords;
       var speed = $backgroundObj.parent().attr('data-speed');
@@ -35,10 +36,10 @@
         }
 
         if ($backgroundObj.offset().top < docViewBottom) {
+          var container = $('#' + $targetBackgroundObj);
           yPos = -((docViewTop / speed) + offset);
           coords = '50% '+ yPos + 'px';
-
-          $backgroundObj.css({ backgroundPosition: coords });
+          $('.paragraph--type--xeno-hero__image', container).css({ backgroundPosition: coords });
         }
       });
     });
