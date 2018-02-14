@@ -8,3 +8,4 @@ xeno-hero:
       minified: false
   dependencies:
     - core/jquery
+    - core/drupal
