@@ -65,6 +65,7 @@
 [data-overlay]::before {
   background: #252525 none repeat scroll 0 0;
   content: "";
+  display: block;
   height: 100%;
   left: 0;
   position: absolute;
