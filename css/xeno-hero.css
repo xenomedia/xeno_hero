@@ -4,6 +4,7 @@
 }
 
 .paragraph--type--xeno-hero {
+  display: block;
   position: relative;
   padding-top: 180px;
   padding-bottom: 140px;
