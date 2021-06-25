@@ -132,7 +132,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Prints div with classes, & content w/o img/invert/overlay/parallax fields. #}
-<div{{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds).setAttribute('data-offset', parallax_offset) }}>
+<div id="xeno-hero--{{ paragraph.id() }}" {{ attributes.addClass(classes).setAttribute('data-overlay', overlay_levels).setAttribute('data-speed', parallax_speeds).setAttribute('data-offset', parallax_offset) }}>
   {% if content.xeno_background_image|render %}
     <div class="paragraph--type--xeno-hero__image">
       {{ content.xeno_background_image }}
