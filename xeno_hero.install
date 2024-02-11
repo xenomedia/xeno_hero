@@ -14,7 +14,7 @@ use Drupal\field\Entity\FieldStorageConfig;
  */
 function xeno_hero_update_8001() {
   // Sets variable for the path.
-  $path = drupal_get_path('module', 'xeno_hero');
+  $path = \Drupal::service('extension.list.module')->getPath('xeno_hero');
 
   // Create field storage.
   $field_storage_yml = Yaml::parse(file_get_contents($path . '/config/install/field.storage.paragraph.xeno_offset.yml'));
